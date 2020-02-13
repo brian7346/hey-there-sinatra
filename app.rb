@@ -15,3 +15,7 @@ end
 get '/' do
   erb 'Hello World!'
 end
+
+get '/new' do
+  erb 'New post!'
+end
