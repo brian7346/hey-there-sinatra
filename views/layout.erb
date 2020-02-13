@@ -22,8 +22,11 @@
       </div>
     </div>
   </nav>
-		<div class="container">
+		<div class="container mt-4">
 			<div>
+      <%if @error then %>
+        <div class="alert alert-danger"><%=@error%></div>
+      <% end %>
 				<%= yield %>
 			</div>
 		</div>
