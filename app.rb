@@ -17,5 +17,5 @@ get '/' do
 end
 
 get '/new' do
-  erb 'New post!'
+  erb :new
 end
