@@ -3,12 +3,12 @@
 <ul  class="mt-4 list-group">
   <% @results.each do |post|%>
     <li class="list-group-item">
-    <div class="d-flex justify-content-between align-items-center">
-      <p><%= post['content']%></p>
+    <div class="d-flex justify-content-between align-items-center mt-2">
+      <p class="m-0 p-0"><%= post['content']%></p>
       <span class="badge badge-primary badge-pill">Added at <%= post['created_date']%></span>
     </div>
     <a
-      class="btn btn-outline-dark"
+      class="btn btn-outline-dark mt-4"
       role="button"
       href="/details/<%= post['id']%>"
     >
