@@ -19,7 +19,7 @@ def init_table
     "id"	INTEGER PRIMARY KEY AUTOINCREMENT,
     "created_date"	DATE,
     "content"	TEXT,
-    "post_id: INTEGER
+    "post_id" INTEGER
   );'
 end
 
@@ -75,5 +75,17 @@ post '/details/:post_id' do
   post_id = params[:post_id]
   content = params[:content]
 
-  erb "You tuped #{content}, for #{post_id}"
+  @db.execute 'insert into Comments 
+    (
+      content,
+      created_date,
+      post_id
+    ) values 
+    (
+      ?,
+      datetime(),
+      ?
+    )', [content, post_id]
+
+  redirect '/details/' + post_id
 end
