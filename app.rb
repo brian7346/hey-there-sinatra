@@ -1,9 +1,15 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sqlite3'
 
-configure do
-  enable :sessions
+def init_db 
+  @db = SQLite3::Database.new 'heytheresinatra.db'
+  @db.results_as_hash = true
+end
+
+before do 
+  init_db
 end
 
 helpers do
