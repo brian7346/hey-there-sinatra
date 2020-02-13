@@ -1,9 +1,19 @@
 <h1>Latest posts</h1>
 
-<div class="mt-4">
+<ul  class="mt-4 list-group">
   <% @results.each do |post|%>
-    <p><%= post['content']%></p>
-    <p>Added at <%= post['created_date']%></p>
-    <hr>
+    <li class="list-group-item">
+    <div class="d-flex justify-content-between align-items-center">
+      <p><%= post['content']%></p>
+      <span class="badge badge-primary badge-pill">Added at <%= post['created_date']%></span>
+    </div>
+    <a
+      class="btn btn-outline-dark"
+      role="button"
+      href="/post/<%= post['id']%><"
+    >
+        Comments
+    </a>
+    </li>
   <% end %>
 </div>
