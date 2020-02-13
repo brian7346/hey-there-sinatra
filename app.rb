@@ -32,7 +32,9 @@ helpers do
 end
 
 get '/' do
-  erb 'Hello World!'
+  @results = @db.execute 'select * from Posts order by id desc'
+
+  erb :index
 end
 
 get '/new' do
