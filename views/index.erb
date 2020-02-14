@@ -1,4 +1,4 @@
-<h1>Latest posts</h1>
+<h4 class="text-secondary mb-5">Latest posts</h4>
 
 <% @results.each do |post|%>
   <div class="col p-4 d-flex flex-column position-static badge-light">
@@ -6,6 +6,11 @@
     <h3 class="mb-0"><%= post['title']%></h3>
     <div class="mb-1 text-muted"><%= post['created_date']%></div>
     <p class="card-text mb-auto"><%= post['content']%></p>
-    <a href="/details/<%=post['id']%>" class="stretched-link">View comments</a>
+    <a
+      href="/details/<%=post['id']%>"
+      class="stretched-link mt-2"
+    >
+      View comments
+    </a>
   </div>
 <%end%>
