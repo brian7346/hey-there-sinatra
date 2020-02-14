@@ -12,6 +12,7 @@ def init_table
   @db.execute 'CREATE TABLE IF NOT EXISTS "Posts" (
     "id"	INTEGER PRIMARY KEY AUTOINCREMENT,
     "created_date"	DATE,
+    "title" TEXT,
     "content"	TEXT
   );'
   
@@ -49,15 +50,16 @@ get '/new' do
 end
 
 post '/new' do
+  title = params[:title].strip
   content = params[:content].strip
 
-  if content.length == 0
+  if content.length <= 0 || title.length <= 0
     @error = "Type post text"
 
     return erb :new
   end
 
-  @db.execute 'insert into Posts (content, created_date) values(?, datetime())', [content]
+  @db.execute 'insert into Posts (title, content, created_date) values(?, ?,datetime())', [title, content]
 
   redirect to '/'
 end

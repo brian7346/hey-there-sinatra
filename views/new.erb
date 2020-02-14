@@ -2,11 +2,21 @@
 
 <form action="/new" method="POST">
   <div class="form-group">
+    <label for="postTitle" class="text-muted">Post Title</label>
+    <input
+      name="title"
+      class="form-control"
+      id="postTitle"
+    >
+  </div>
+  <div class="form-group">
+    <label for="postContent" class="text-muted">What are you thinking?</label>
     <textarea
       name="content"
+      id="postContent"
       class="form-control"
       rows="6"
     ></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Publish</button>
+  <button type="submit" class="btn btn-primary btn-small">Publish</button>
 </form>
