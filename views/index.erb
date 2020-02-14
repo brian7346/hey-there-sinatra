@@ -1,7 +1,7 @@
 <h4 class="text-secondary mb-5">Latest posts</h4>
 
 <% @results.each do |post|%>
-  <div class="col p-4 d-flex flex-column position-static badge-light">
+  <div class="col p-4 d-flex flex-column position-static badge-light mt-4 mb-4">
     <strong class="d-inline-block mb-2 text-primary">Post <%= post['id']%></strong>
     <h3 class="mb-0"><%= post['title']%></h3>
     <div class="mb-1 text-muted"><%= post['created_date']%></div>
