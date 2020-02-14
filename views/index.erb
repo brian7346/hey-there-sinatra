@@ -2,7 +2,12 @@
 
 <% @results.each do |post|%>
   <div class="col p-4 d-flex flex-column position-static badge-light mt-4 mb-4">
-    <strong class="d-inline-block mb-2 text-primary">Post <%= post['id']%></strong>
+      <div class="d-flex justify-content-between align-items-center">
+        <strong class="d-inline-block mb-2 text-primary">Post <%= post['id']%></strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true" class="text-danger">&times;</span>
+        </button>
+      </div>
     <h3 class="mb-0"><%= post['title']%></h3>
     <div class="mb-1 text-muted"><%= post['created_date']%></div>
     <p class="card-text mb-auto"><%= post['content']%></p>
